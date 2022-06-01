@@ -23,7 +23,7 @@ const Filter = () => {
     if (ip1 === 1 && ip2 === 1 && ip3 === 1) {
       filterResult("1500", "10000");
   
-    } else if ((ip1 === 1 && ip2 === 1)) {
+    } else if ((ip1 == 1 && ip2 == 1)) {
       filterResult("1500", "7000");
     
     } else if (ip2 === 1 && ip3 === 1) {
