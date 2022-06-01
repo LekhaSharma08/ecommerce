@@ -1,0 +1,22 @@
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+.images{
+    padding-top: 35px;
+    padding-left: 35px;
+}
+
+.stars{
+  padding-left: 20%;
+}
+
+.scroll{
+  overflow-y: scroll;
+  height:90vh;
+}
+
+.height{
+  height: 90%;
+}

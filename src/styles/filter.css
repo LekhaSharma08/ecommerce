@@ -1,0 +1,44 @@
+.content{
+    padding-top: 22px;
+    padding-left: 19px;
+}
+
+.spacing{
+    padding-top: 3vh;
+}
+
+.color-btn{
+    padding-top: 2.5px;
+    display: flex;
+    
+}
+
+.button{   
+    width: 28px;
+    height:28px;
+    border: none;  
+}
+
+.space{
+    margin-left: 12px;
+}
+
+.apply{
+    background-color:black;
+    color: white;
+    width:100px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:9vh;
+}
+
+
+.icon{
+    position:absolute;
+    right:25px;
+    top:25px
+}
