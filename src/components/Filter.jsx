@@ -1,4 +1,4 @@
-import { React, useContext, useState } from "react";
+import { React, useContext, useEffect, useState } from "react";
 import "../styles/filter.css";
 import { CartContext } from "../contexts/CartContext";
 import CheckBox from "./CheckBox";
@@ -8,11 +8,17 @@ import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 const Filter = () => {
   const { shoes, setShoes } = useContext(CartContext);
 
+  // useEffect(() => {
+  //   setShoes(shoes);
+  // }, [shoes, setShoes]);
+
   const filterResult = (price1, price2) => {
     const result = shoes.filter((curData) => {
       return curData.price >= price1 && curData.price <= price2;
     });
+    console.log("test1", shoes);
     setShoes(result);
+    console.log("test2", shoes);
   };
 
   const [ip1, set1] = useState(0);
@@ -22,22 +28,22 @@ const Filter = () => {
   const filter = () => {
     if (ip1 === 1 && ip2 === 1 && ip3 === 1) {
       filterResult("1500", "10000");
-  
-    } else if ((ip1 == 1 && ip2 == 1)) {
+      console.log("click1");
+    } else if (ip1 === 1 && ip2 === 1) {
       filterResult("1500", "7000");
-    
+      console.log("click2");
     } else if (ip2 === 1 && ip3 === 1) {
       filterResult("4001", "10000");
-  
+      console.log("click3");
     } else if (ip1 === 1) {
       filterResult("1500", "4000");
-
+      console.log("click4");
     } else if (ip2 === 1) {
       filterResult("4001", "7000");
-  
+      console.log("click5");
     } else if (ip3 === 1) {
       filterResult("7000", "10000");
-  
+      console.log("click6");
     }
   };
 
@@ -61,7 +67,11 @@ const Filter = () => {
               id="1"
               ip={ip1}
               change={() => {
-                set1(1);
+                if (ip1 === 1) {
+                  set1(0);
+                } else {
+                  set1(1);
+                }
               }}
             />
             <CheckBox
@@ -69,7 +79,11 @@ const Filter = () => {
               id="2"
               ip={ip2}
               change={() => {
-                set2(1);
+                if (ip2 === 1) {
+                  set2(0);
+                } else {
+                  set2(1);
+                }
               }}
             />
             <CheckBox
@@ -77,7 +91,11 @@ const Filter = () => {
               id="3"
               ip={ip3}
               change={() => {
-                set3(1);
+                if (ip3 === 1) {
+                  set3(0);
+                } else {
+                  set3(1);
+                }
               }}
             />
             <div className="spacing">

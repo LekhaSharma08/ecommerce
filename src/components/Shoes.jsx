@@ -1,10 +1,15 @@
-import { React, useContext } from "react";
+import { React, useContext, useEffect } from "react";
 import { CartContext } from "../contexts/CartContext";
 import "../styles/shoes.css";
 import Item from "./Item";
 
 const Shoes = () => {
   const { cart, setCart, shoes, setShoes } = useContext(CartContext);
+
+  // useEffect(() => {
+  //   setShoes(shoes);
+  // }, [shoes]);
+  
   return (
     <div className="col-lg-6  py-5">
       <div className="card border-0 shadow height">
@@ -13,7 +18,7 @@ const Shoes = () => {
           <div className="flex-container">
             {shoes.map((item) => {
               return (
-                <>
+                <div key={item.id}>
                   <Item
                     src={item.image}
                     name={item.name}
@@ -27,7 +32,7 @@ const Shoes = () => {
                       }
                     }}
                   />
-                </>
+                </div>
               );
             })}
           </div>

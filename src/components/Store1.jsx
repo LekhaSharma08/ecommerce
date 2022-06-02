@@ -11,21 +11,25 @@ const Store1 = () => {
   const [cart, setCart] = useState([]);
   const [shoes, setShoes] = useState([
     {
+      id: 1,
       image: "/assets/shoe.jpg",
       name: "KSL01",
       price: 2199,
     },
     {
+      id: 2,
       image: "/assets/shoe2.png",
       name: "KSW01",
       price: 2469,
     },
     {
+      id: 3,
       image: "/assets/shoe.jpg",
       name: "KSL02",
       price: 5969,
     },
     {
+      id: 4,
       image: "/assets/shoe2.png",
       name: "KSW02",
       price: 6669,

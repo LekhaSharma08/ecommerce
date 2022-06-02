@@ -2,7 +2,7 @@ import React from "react";
 
 const Item = ({ src, name, price, show, onClick }) => {
   return (
-    <div class="images" onClick={() => onClick()}>
+    <div className="images" onClick={() => onClick()}>
       <img
         src={src}
         alt="can't fetch"
