@@ -6,19 +6,20 @@ import ColorButton from "./ColorButton";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 
 const Filter = () => {
-  const { shoes, setShoes } = useContext(CartContext);
+  const { shoes, setShoes, temp, updateTemp } = useContext(CartContext);
 
   // useEffect(() => {
   //   setShoes(shoes);
   // }, [shoes, setShoes]);
-
+ 
+ 
   const filterResult = (price1, price2) => {
     const result = shoes.filter((curData) => {
       return curData.price >= price1 && curData.price <= price2;
     });
-    console.log("test1", shoes);
-    setShoes(result);
-    console.log("test2", shoes);
+  
+    updateTemp(result);
+   
   };
 
   const [ip1, set1] = useState(0);

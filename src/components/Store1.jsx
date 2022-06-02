@@ -1,4 +1,4 @@
-import { React, useState, useContext } from "react";
+import { React, useState, useContext, useEffect } from "react";
 import { CartContext } from "../contexts/CartContext";
 import "../styles/cards.css";
 import Filter from "./Filter.jsx";
@@ -9,6 +9,7 @@ import Cart from "./Cart.jsx";
 
 const Store1 = () => {
   const [cart, setCart] = useState([]);
+  const [temp, updateTemp] = useState([]);
   const [shoes, setShoes] = useState([
     {
       id: 1,
@@ -35,8 +36,16 @@ const Store1 = () => {
       price: 6669,
     },
   ]);
+
+  
+  useEffect(() => {
+    updateTemp(shoes);
+  }, []);
+  
   return (
-    <CartContext.Provider value={{ cart, setCart, shoes, setShoes }}>
+    <CartContext.Provider
+      value={{ cart, setCart, shoes, setShoes, temp, updateTemp }}
+    >
       <div className="Main">
         <div className="container-fluid">
           <div className="row px-3 py-3 cards">

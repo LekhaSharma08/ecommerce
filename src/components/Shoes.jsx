@@ -4,7 +4,7 @@ import "../styles/shoes.css";
 import Item from "./Item";
 
 const Shoes = () => {
-  const { cart, setCart, shoes, setShoes } = useContext(CartContext);
+  const { cart, setCart, shoes, setShoes, temp } = useContext(CartContext);
 
   // useEffect(() => {
   //   setShoes(shoes);
@@ -16,7 +16,7 @@ const Shoes = () => {
         <div className="card-body scroll">
           <h3 className="card-title px-3 py-2">SHOES</h3>
           <div className="flex-container">
-            {shoes.map((item) => {
+            {temp.map((item) => {
               return (
                 <div key={item.id}>
                   <Item
