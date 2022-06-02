@@ -3,6 +3,7 @@ import { CartContext } from "../contexts/CartContext";
 import "../styles/shoes.css";
 import Item from "./Item";
 
+
 const Shoes = () => {
   const { cart, setCart, shoes, setShoes, temp } = useContext(CartContext);
 
@@ -20,7 +21,7 @@ const Shoes = () => {
               return (
                 <div key={item.id}>
                   <Item
-                    src={item.image}
+                    src={require(`../assets/${item.image}`)}
                     name={item.name}
                     price={item.price}
                     show={true}

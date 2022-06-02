@@ -1,4 +1,5 @@
 import React from "react";
+import StarImage from "../assets/rating.png"
 
 const Item = ({ src, name, price, show, onClick }) => {
   return (
@@ -16,7 +17,7 @@ const Item = ({ src, name, price, show, onClick }) => {
         <span>Rs. {price}</span>
         {show && (
           <img
-            src="/assets/rating.png"
+            src={StarImage}
             alt="can't fetch"
             height="22px"
             width="140px"
