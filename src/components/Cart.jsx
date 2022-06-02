@@ -29,7 +29,7 @@ const Cart = () => {
                 return (
                   <div className="flex-container">
                     <Item
-                      src={item.image}
+                      src={require(`../assets/${item.image}`)}
                       name={item.name}
                       price={item.price}
                       onClick={() => {}}
