@@ -2,6 +2,7 @@ import React from "react";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "../styles/Nav.css";
 import Button from '@mui/material/Button';
+import Logo from "../assets/websitelogo.png";
 
 
 const data = [
@@ -33,7 +34,7 @@ const Navbar = () => {
       <div className="container pt-4">
         <a className="" href="!#">
           <img
-            src="./assets/websitelogo.png"
+            src={Logo}
             alt="oops"
             height="50"
             width="50"
