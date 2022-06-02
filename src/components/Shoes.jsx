@@ -1,15 +1,12 @@
-import { React, useContext, useEffect } from "react";
+import { React, useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import "../styles/shoes.css";
 import Item from "./Item";
 
 
 const Shoes = () => {
-  const { cart, setCart, shoes, setShoes, temp } = useContext(CartContext);
+  const { cart, setCart, temp } = useContext(CartContext);
 
-  // useEffect(() => {
-  //   setShoes(shoes);
-  // }, [shoes]);
   
   return (
     <div className="col-lg-6  py-5">

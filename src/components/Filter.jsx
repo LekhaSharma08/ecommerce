@@ -1,4 +1,4 @@
-import { React, useContext, useEffect, useState } from "react";
+import { React, useContext, useState } from "react";
 import "../styles/filter.css";
 import { CartContext } from "../contexts/CartContext";
 import CheckBox from "./CheckBox";
@@ -6,12 +6,8 @@ import ColorButton from "./ColorButton";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 
 const Filter = () => {
-  const { shoes, setShoes, temp, updateTemp } = useContext(CartContext);
+  const { shoes, updateTemp } = useContext(CartContext);
 
-  // useEffect(() => {
-  //   setShoes(shoes);
-  // }, [shoes, setShoes]);
- 
  
   const filterResult = (price1, price2) => {
     const result = shoes.filter((curData) => {
@@ -27,24 +23,25 @@ const Filter = () => {
   const [ip3, set3] = useState(0);
 
   const filter = () => {
-    if (ip1 === 1 && ip2 === 1 && ip3 === 1) {
+
+     if ((ip1 === 1 && ip2 === 1 && ip3 === 1) || (ip1 === 0 && ip2 === 0 && ip3 === 0)) {
       filterResult("1500", "10000");
-      console.log("click1");
+
     } else if (ip1 === 1 && ip2 === 1) {
       filterResult("1500", "7000");
-      console.log("click2");
+
     } else if (ip2 === 1 && ip3 === 1) {
       filterResult("4001", "10000");
-      console.log("click3");
+
     } else if (ip1 === 1) {
       filterResult("1500", "4000");
-      console.log("click4");
+
     } else if (ip2 === 1) {
       filterResult("4001", "7000");
-      console.log("click5");
+
     } else if (ip3 === 1) {
       filterResult("7000", "10000");
-      console.log("click6");
+
     }
   };
 
