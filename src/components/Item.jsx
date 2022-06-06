@@ -1,9 +1,10 @@
 import React from "react";
 import StarImage from "../assets/rating.png"
 
-const Item = ({ src, name, price, show, onClick }) => {
+const Item = ({ src, name, price, show, onClick, type }) => {
   return (
-    <div className="images" onClick={() => onClick()}>
+    // style={{paddingLeft:type=="cart"?15:35, "paddingTop":type=="cart"?25:35 }}
+    <div style={{paddingLeft:type ==="cart"?0:"3.5rem" ,"paddingTop":type === "cart"?25:35}} onClick={() => onClick()}>
       <img
         src={src}
         alt="can't fetch"

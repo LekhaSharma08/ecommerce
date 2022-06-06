@@ -1,12 +1,12 @@
 import { useState } from "react";
 function IncDecCounter() {
-  let [num, setNum] = useState(0);
+  let [num, setNum] = useState(1);
   let incNum = () => {
     setNum(Number(num) + 1);
   };
 
   let decNum = () => {
-    if (num > 0) {
+    if (num > 1) {
       setNum(num - 1);
     }
   };

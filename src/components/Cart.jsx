@@ -3,6 +3,7 @@ import { useContext } from "react";
 import "../styles/cart.css";
 import { CartContext } from "../contexts/CartContext";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
+import CancelIcon from '@mui/icons-material/Cancel';
 import Item from "./Item";
 import Counter from "./Counter";
 
@@ -27,14 +28,24 @@ const Cart = () => {
             <>
               {cart.map((item) => {
                 return (
-                  <div className="flex-container">
+                  <div className="flex-container"style={{ paddingTop:20}}>
+                  
+                  <div className="cross">
+                  <button style={{border:0, backgroundColor:"white"}}>
+                  <CancelIcon />
+                  </button>
+                   
+                   {console.log(1)}
+                   </div>
+                   <div>
                     <Item
+                      type="cart"
                       src={require(`../assets/${item.image}`)}
                       name={item.name}
                       price={item.price}
                       onClick={() => {}}
                     />
-
+                    </div>
                     <Counter />
                   </div>
                 );
