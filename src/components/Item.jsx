@@ -1,7 +1,7 @@
 import React from "react";
 import StarImage from "../assets/rating.png"
 
-const Item = ({ src, name, price, show, onClick, type }) => {
+const Item = ({ src, name, price, show, onClick, type, id }) => {
   return (
     // style={{paddingLeft:type=="cart"?15:35, "paddingTop":type=="cart"?25:35 }}
     <div style={{paddingLeft:type ==="cart"?0:"3.5rem" ,"paddingTop":type === "cart"?25:35}} onClick={() => onClick()}>

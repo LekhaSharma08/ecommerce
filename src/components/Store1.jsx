@@ -5,7 +5,6 @@ import Filter from "./Filter.jsx";
 import Shoes from "./Shoes.jsx";
 import Cart from "./Cart.jsx";
 
-
 const Store1 = () => {
   const [cart, setCart] = useState([]);
   const [temp, updateTemp] = useState([]);
@@ -36,11 +35,14 @@ const Store1 = () => {
     },
   ]);
 
-  
   useEffect(() => {
     updateTemp(shoes);
   }, []);
-  
+
+  // useEffect(() => {
+  //   setCart(cart);
+  // }, [cart]);
+
   return (
     <CartContext.Provider
       value={{ cart, setCart, shoes, setShoes, temp, updateTemp }}

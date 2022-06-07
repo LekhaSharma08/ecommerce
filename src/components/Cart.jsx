@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import "../styles/cart.css";
 import { CartContext } from "../contexts/CartContext";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-import CancelIcon from '@mui/icons-material/Cancel';
+import CancelIcon from "@mui/icons-material/Cancel";
 import Item from "./Item";
 import Counter from "./Counter";
 
 const Cart = () => {
   // const { cart } = useContext(StoreContext);
-  const { cart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
+  function removeItem(id) {
+    for (var n = 0; n < cart.length; n++) {
+      if (cart[n].id === id) {
+        cart.splice(n, 1);
+        break;
+      }
+    }
+    console.log(cart);
+  }
+
+  useEffect(() => {
+    setCart(cart);
+  }, [cart, setCart]);
 
   return (
     <div className="col-lg-3 col-md-12 py-5">
@@ -24,27 +37,35 @@ const Cart = () => {
           <div className="icon">
             <LocalMallIcon fontSize="large" />
           </div>
+
           {cart.length ? (
             <>
               {cart.map((item) => {
                 return (
-                  <div className="flex-container"style={{ paddingTop:20}}>
-                  
-                  <div className="cross">
-                  <button style={{border:0, backgroundColor:"white"}}>
-                  <CancelIcon />
-                  </button>
-                   
-                   {console.log(1)}
-                   </div>
-                   <div>
-                    <Item
-                      type="cart"
-                      src={require(`../assets/${item.image}`)}
-                      name={item.name}
-                      price={item.price}
-                      onClick={() => {}}
-                    />
+                  <div
+                    className="flex-container"
+                    style={{ paddingTop: 20 }}
+                    key={item.id}
+                  >
+                    <div className="cross">
+                      <button
+                        style={{ border: 0, backgroundColor: "white" }}
+                        onClick={() => {
+                          removeItem(item.id);
+                        }}
+                      >
+                        <CancelIcon />
+                      </button>
+                    </div>
+                    <div>
+                      <Item
+                        id={item.id}
+                        type="cart"
+                        src={require(`../assets/${item.image}`)}
+                        name={item.name}
+                        price={item.price}
+                        onClick={() => {}}
+                      />
                     </div>
                     <Counter />
                   </div>

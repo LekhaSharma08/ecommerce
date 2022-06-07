@@ -18,7 +18,8 @@ const Shoes = () => {
               return (
                 <div key={item.id}>
                   <Item
-                  type="shoe"
+                    id = {item.id}
+                    type="shoe"
                     src={require(`../assets/${item.image}`)}
                     name={item.name}
                     price={item.price}
