@@ -11,18 +11,26 @@ const Cart = () => {
   // const { cart } = useContext(StoreContext);
   const { cart, setCart } = useContext(CartContext);
   function removeItem(id) {
-    for (var n = 0; n < cart.length; n++) {
-      if (cart[n].id === id) {
-        cart.splice(n, 1);
-        break;
-      }
-    }
-    console.log(cart);
+    // for (var n = 0; n < cart.length; n++) {
+    //   if (cart[n].id === id) {
+    //     cart.splice(n, 1);
+    //     break;
+    //   }
+    // }
+    setCart(cart => {
+      return cart.filter((data) => data.id !== id)    
+    })
+    // console.log(
+    //   cart.map((item) => {
+    //     return item.id;
+    //   })
+    // );
   }
 
-  useEffect(() => {
-    setCart(cart);
-  }, [cart, setCart]);
+  // useEffect(() => {
+  //   setCart(cart);
+  //   console.log("render");
+  // }, [cart.length]);
 
   return (
     <div className="col-lg-3 col-md-12 py-5">
@@ -39,7 +47,7 @@ const Cart = () => {
           </div>
 
           {cart.length ? (
-            <>
+            <div>
               {cart.map((item) => {
                 return (
                   <div
@@ -71,7 +79,7 @@ const Cart = () => {
                   </div>
                 );
               })}
-            </>
+            </div>
           ) : (
             <div className="flex-center" style={{ height: "530px" }}>
               <span>Your cart is empty!</span>

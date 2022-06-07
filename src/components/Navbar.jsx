@@ -19,7 +19,7 @@ const data = [
     name: "TEAM",
   },
   {
-    link: "/store",
+    link: "/Store1",
     name: "STORE",
   },
   {

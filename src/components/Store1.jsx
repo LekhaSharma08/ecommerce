@@ -39,9 +39,6 @@ const Store1 = () => {
     updateTemp(shoes);
   }, []);
 
-  // useEffect(() => {
-  //   setCart(cart);
-  // }, [cart]);
 
   return (
     <CartContext.Provider
