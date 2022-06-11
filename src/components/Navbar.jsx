@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "../styles/Nav.css";
 import Button from '@mui/material/Button';
@@ -19,7 +19,7 @@ const data = [
     name: "TEAM",
   },
   {
-    link: "/Store1",
+    link: "/store",
     name: "STORE",
   },
   {
@@ -29,8 +29,9 @@ const data = [
 ];
 
 const Navbar = () => {
+ const [dash,setDash]=useState(0);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light py-2">
+    <nav className="navbar navbar-expand-lg navbar-light py-0">
       <div className="container pt-4">
         <a className="" href="!#">
           <img
@@ -49,23 +50,26 @@ const Navbar = () => {
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse dash" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 w-45">
             {data.map((value, index) => (
               <li className="nav-item mx-3" key={index}>
-                <a className="nav-link text-dark" href={value.link}>
+                {console.log(dash)}
+                <a className="nav-link text-dark" href={value.link} is-active="black">
                   {value.name}
                 </a>
               </li>
 
             ))}
+            <span className="nav-indicator"></span>
            
           </ul>
           <Button size="large" style={{color:"black" }} startIcon={<PersonOutlineIcon/>}>
-            GAGAN
+            <p className="user">USER</p>
           </Button>
         </div>
       </div>

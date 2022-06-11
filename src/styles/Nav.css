@@ -1,17 +1,35 @@
-/* .nav-link{
-    line-height:0;
-} */
-
-/* .navbar .collapse .navbar-nav .nav-iteam{
-    position:relative;
+p.user{
+    padding-top: 15px;
+    display: inline;
+    font-size: 18px;
 }
 
-.navbar .collapse .navbar-nav .nav-iteam::after{
+ul li{
+    font-size:18px;
+    position:relative;
+    /* text-decoration: underline;
+    text-decoration-thickness: 5px; */
+    /* text-underline-offset: 10px; */
+}
+
+
+ul li:hover{
+    font-weight: bold;
+}
+
+ul li:after{
+    content: "";
+    height: 5px;
+    width: 0px;
+    background: black;
+    border-radius: 10px;
     position:absolute;
-    content:"...";
-    background-color:black;
-    width:100%;
-    height:5px;
-} */
+    bottom:-5px;
+    right:0;
+    transition:0.3s;
+}
 
-
+ul li:hover:after{
+ width:100%;
+ left:0;
+}

@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from "react";
 import { CartContext } from "../contexts/CartContext";
 import "../styles/cards.css";
-import Filter from "./Filter.jsx";
-import Shoes from "./Shoes.jsx";
-import Cart from "./Cart.jsx";
+import Filter from "../components/Filter.jsx";
+import Shoes from "../components/Shoes.jsx";
+import Cart from "../components/Cart.jsx";
 
 const Store1 = () => {
   const [cart, setCart] = useState([]);
@@ -46,7 +46,7 @@ const Store1 = () => {
     >
       <div className="Main">
         <div className="container-fluid">
-          <div className="row px-3 py-3 cards">
+          <div className="row px-3 py-4 cards">
             <Filter />
             <Shoes />
             <Cart />
