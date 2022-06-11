@@ -29,7 +29,7 @@ const data = [
 ];
 
 const Navbar = () => {
- const [dash,setDash]=useState(0);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light py-0">
       <div className="container pt-4">
@@ -58,7 +58,6 @@ const Navbar = () => {
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 w-45">
             {data.map((value, index) => (
               <li className="nav-item mx-3" key={index}>
-                {console.log(dash)}
                 <a className="nav-link text-dark" href={value.link} is-active="black">
                   {value.name}
                 </a>
